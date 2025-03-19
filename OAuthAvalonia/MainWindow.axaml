@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oAuthAvalonia="clr-namespace:OAuthAvalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="OAuthAvalonia.MainWindow"
+        x:DataType="oAuthAvalonia:MainWindowViewModel"
+        Width="800"
+        Height="1000"
+        WindowStartupLocation="CenterScreen"
+        Title="OAuthAvalonia">
+    
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        
+        <Label Content="{Binding Name, StringFormat=Hello {0}!, Mode=TwoWay}"
+               IsVisible="{Binding IsAuthenticated, Mode=TwoWay}"
+               Padding="10"
+               Margin="10"
+        />
+        
+        <Button Command="{Binding SignIn}"
+                Background="Purple"
+                Foreground="White"
+                Content="Log in"
+                IsVisible="{Binding !IsAuthenticated}"
+        />
+        
+        <Button Command="{Binding SignOut}"
+                Background="Red"
+                Foreground="White"
+                Content="Log out"
+                IsVisible="{Binding IsAuthenticated}"
+        />
+        
+        
+        
+    </StackPanel>
+</Window>
