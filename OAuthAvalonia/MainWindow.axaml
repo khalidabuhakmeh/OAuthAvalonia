@@ -10,15 +10,14 @@
         Height="400"
         WindowStartupLocation="CenterScreen"
         Title="OAuthAvalonia">
-    
+
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        
+
         <Label Content="{Binding Name, StringFormat=Hello {0}!}"
                Padding="10"
                Margin="10"
-               FontSize="20"
-        />
-        
+               FontSize="20" />
+
         <Button Command="{Binding SignIn}"
                 Background="Purple"
                 Foreground="White"
@@ -26,9 +25,8 @@
                 IsVisible="{Binding !IsAuthenticated}"
                 HorizontalAlignment="Stretch"
                 HorizontalContentAlignment="Center"
-                Margin="10"
-        />
-        
+                Margin="10" />
+
         <Button Command="{Binding SignOut}"
                 Background="Red"
                 Foreground="White"
@@ -36,10 +34,7 @@
                 IsVisible="{Binding IsAuthenticated}"
                 HorizontalAlignment="Stretch"
                 HorizontalContentAlignment="Center"
-                Margin="10"
-        />
-        
-        
-        
+                Margin="10" />
+
     </StackPanel>
 </Window>
