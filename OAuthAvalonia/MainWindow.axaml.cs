@@ -31,7 +31,7 @@ public partial class MainWindowViewModel : ObservableObject
         Login is { User.Identity.IsAuthenticated: true };
 
     public string Name =>
-        Login?.User.Identity?.Name ?? "";
+        Login?.User.Identity?.Name ?? "Anonymous";
     
     public MainWindowViewModel(Window parent)
     {

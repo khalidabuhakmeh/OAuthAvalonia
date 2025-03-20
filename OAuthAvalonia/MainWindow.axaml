@@ -6,17 +6,17 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="OAuthAvalonia.MainWindow"
         x:DataType="oAuthAvalonia:MainWindowViewModel"
-        Width="800"
-        Height="1000"
+        Width="400"
+        Height="400"
         WindowStartupLocation="CenterScreen"
         Title="OAuthAvalonia">
     
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         
-        <Label Content="{Binding Name, StringFormat=Hello {0}!, Mode=TwoWay}"
-               IsVisible="{Binding IsAuthenticated, Mode=TwoWay}"
+        <Label Content="{Binding Name, StringFormat=Hello {0}!}"
                Padding="10"
                Margin="10"
+               FontSize="20"
         />
         
         <Button Command="{Binding SignIn}"
@@ -24,6 +24,9 @@
                 Foreground="White"
                 Content="Log in"
                 IsVisible="{Binding !IsAuthenticated}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                Margin="10"
         />
         
         <Button Command="{Binding SignOut}"
@@ -31,6 +34,9 @@
                 Foreground="White"
                 Content="Log out"
                 IsVisible="{Binding IsAuthenticated}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                Margin="10"
         />
         
         
